@@ -2,12 +2,12 @@ services:
   nmap:
     container_name: nmap
     build: . 
+    # /tmp/logs (rotate daily, log to file, standard format)
     volumes: 
       - C:\TMP:/tmp
+    # if breaks, turn off
     dns:
       - 150.250.1.1
-    ports: 
-      - "5000:5000"
   db:
     container_name: db
     volumes:
@@ -17,3 +17,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 1234
+  web:
+    container_name: web
+    build: web/
+    ports:
+      - "5000:5000"

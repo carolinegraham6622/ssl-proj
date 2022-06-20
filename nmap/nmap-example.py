@@ -1,13 +1,12 @@
 from datetime import datetime
 from peewee import *
-import socket
 from lxml import etree
 
 db = MySQLDatabase('ssl_check', host = 'db', user = 'root', password = '1234')
 db.connect()
 
 #------------------------------------------------
-# Certification Class for DB (fix types)
+# Certification Class for DB
 #------------------------------------------------
 class Cert(Model):
     start_time = DateTimeField() 
