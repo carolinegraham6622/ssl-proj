@@ -1,8 +1,5 @@
 python-nmap==0.7.1
-pyopenssl==22.0.0
-xmltodict==0.13.0
 peewee==3.14.10
 pymysql==1.0.2
 lxml==4.8.0
-#flask==2.1.2
-#jquery==1.2.3
+#logging==3.10.5

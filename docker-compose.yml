@@ -1,13 +1,13 @@
 services:
   nmap:
     container_name: nmap
-    build: . 
+    build: nmap/
     # /tmp/logs (rotate daily, log to file, standard format)
     volumes: 
       - C:\TMP:/tmp
     # if breaks, turn off
-    dns:
-      - 150.250.1.1
+    #dns:
+    #  - 150.250.1.1
   db:
     container_name: db
     volumes:
