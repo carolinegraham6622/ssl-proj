@@ -9,28 +9,26 @@ app = Flask(__name__)
 def home():
     cur = conn.cursor()
     #pull from the last 30 days
-    cur.execute("select * from cert where start_time > NOW() - INTERVAL 30 DAY;")
+    cur.execute("select host_ip, host_name, port_num, issuer_name, creation_date, expiration_date, expires_in from certmodel where start_time > NOW() - INTERVAL 30 DAY and expires_in > -30 order by expiration_date DESC")
     results = cur.fetchall()
-    #conn.close()
     return render_template('./home.html', results=results)
 
-@app.route("/lastYear/")
-def lastYear():
+@app.route("/lastYear")
+def homelastyear():
     cur = conn.cursor()
-    cur.execute("select * from cert where start_time > NOW() - INTERVAL 365 DAY;")
+    #pull from the last year
+    cur.execute("select host_ip, host_name, port_num, issuer_name, creation_date, expiration_date, expires_in from certmodel where start_time > NOW() - INTERVAL 365 DAY and expires_in > -365 order by expiration_date ASC")
     results = cur.fetchall()
-    #conn.close()
-    return render_template('./home.html', results=results)
+    return render_template('./home_lastyear.html', results=results)
 
-@app.route("/showAll/")
-def showAll():
+@app.route("/showAll")
+def homeshowall():
     cur = conn.cursor()
-    #pull all rows
-    cur.execute("select * from cert")
+    #pull from all
+    cur.execute("select host_ip, host_name, port_num, issuer_name, creation_date, expiration_date, expires_in from certmodel order by expiration_date DESC")
     results = cur.fetchall()
-    #conn.close()
-    return render_template('./home.html', results=results)
-
+    return render_template('./home_showall.html', results=results)
 
 if __name__ == '__main__':
-  app.run(debug=True, host='0.0.0.0')
+  # refactoring (fix?)
+  app.run(debug=True, host='0.0.0.0') 

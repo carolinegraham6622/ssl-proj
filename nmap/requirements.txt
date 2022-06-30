@@ -2,4 +2,3 @@ python-nmap==0.7.1
 peewee==3.14.10
 pymysql==1.0.2
 lxml==4.8.0
-#logging==3.10.5

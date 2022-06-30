@@ -1,0 +1,69 @@
+.filterable {
+margin-top: 15px;
+}
+.filterable .panel-heading .pull-right {
+    margin-top: -20px;
+}
+.filterable .filters input[disabled] {
+    background-color: transparent;
+    border: none;
+    cursor: auto;
+    box-shadow: none;
+    padding: 0;
+    height: auto;
+}
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]::-moz-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]:-ms-input-placeholder {
+    color: #333;
+}
+
+.panel > .panel-heading {
+background-image: none;
+background-color: rgb(44, 40, 37);
+border-color: rgb(44, 40, 37);
+color: white;
+
+}
+div.dataTables_filter, div.dataTables_length {
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+.topnav {
+overflow: hidden;
+background-color: #333;
+font-family: 'Montserrat', sans-serif;
+}
+
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+.topnav a:hover {
+background-color: #ddd;
+color: #333;;
+}
+
+.topnav a.active {
+background-color: rgb(255, 217, 1);
+color: white;
+}
+
+.topnav-right {
+float: right;
+}

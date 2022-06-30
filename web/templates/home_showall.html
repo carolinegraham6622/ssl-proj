@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link type="text/css" rel='stylesheet' href='css/mystyle.css' id="mystyle-css"/>
-    <title>SSL Table</title>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css"  id="mystyle-css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
-</head>
+<title>SSL Table</title>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 
 <!--fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="/fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
 
+<!-- TODO: move style to mycss.css-->
 <style>
+
+    .text-center {
+    font-family: 'Montserrat', sans-serif;
+    }
+
     .filterable {
     margin-top: 15px;
     }
@@ -39,13 +43,12 @@
     .filterable .filters input[disabled]:-ms-input-placeholder {
         color: #333;
     }
-    
     .panel > .panel-heading {
     background-image: none;
     background-color: rgb(44, 40, 37);
     border-color: rgb(44, 40, 37);
     color: white;
-    
+
     }
     div.dataTables_filter, div.dataTables_length {
         margin-top: 15px;
@@ -62,7 +65,7 @@
     background-color: #333;
     font-family: 'Montserrat', sans-serif;
     }
-    
+
     .topnav a {
     float: left;
     color: #f2f2f2;
@@ -71,26 +74,28 @@
     text-decoration: none;
     font-size: 17px;
     }
-    
+
     .topnav a:hover {
     background-color: #ddd;
     color: #333;;
     }
-    
+
     .topnav a.active {
     background-color: rgb(255, 217, 1);
     color: white;
     }
-    
+
     .topnav-right {
     float: right;
     }
     </style>
+</head>
+
 <div class="m-4">
     <nav class="topnav">
-            <a href="/" class="nav-item nav-link active">Last 30 Days</a>
+            <a href="/" class="nav-item nav-link">Last 30 Days</a>
             <a href="/lastYear" class="nav-item nav-link">Last Year</a>
-            <a href="/showAll" class="nav-item nav-link">All</a>
+            <a href="/showAll" class="nav-item nav-link active">All</a>
     </nav>
 </div>
 
@@ -98,7 +103,7 @@
     <div class="text-center mt-5">
         <hr>
         <h1>SSL Certification Table</h1>
-        <p class="lead">Nmap scan results (default: last 30 days, sorted by days until expiration)</p>
+        <p class="lead">Nmap scan results (all entries, sorted by days until expiration)</p>
         <p><em>Click <b>Filter</b> and <b>Show: 'All' entries</b> to search entire table by an individual column</em></p>
     </div>
 
