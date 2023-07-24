@@ -1,4 +1,4 @@
 python-nmap==0.7.1
-peewee==3.14.10
-pymysql==1.0.2
-lxml==4.8.0
+peewee==3.16.2
+lxml==4.9.3
+pymysql==1.1.0

@@ -1,9 +1,10 @@
-from flask import Flask, render_template
 import pymysql
-
-conn = pymysql.connect(database='ssl_check', host='db', user='root', password='1234')
+from flask import Flask, render_template
 
 app = Flask(__name__)
+
+# Connect to the SSL database
+conn = pymysql.connect(database='ssl_check', host='db', user='root', password='1234')
 
 @app.route("/")
 def home():
@@ -30,5 +31,4 @@ def homeshowall():
     return render_template('./home_showall.html', results=results)
 
 if __name__ == '__main__':
-  # refactoring (fix?)
   app.run(debug=True, host='0.0.0.0') 
